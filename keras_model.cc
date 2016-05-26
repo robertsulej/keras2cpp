@@ -292,7 +292,7 @@ std::vector<float> KerasModel::compute_output(DataChunk *dc) {
   dc->show_name();
 
   DataChunk *inp = dc;
-  DataChunk *out;
+  DataChunk *out = 0;
   for(int l = 0; l < (int)m_layers.size(); ++l) {
     cout << "Processing layer " << m_layers[l]->get_name() << endl;
     out = m_layers[l]->compute_output(inp);
